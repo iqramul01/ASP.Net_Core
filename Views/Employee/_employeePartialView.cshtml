@@ -1,0 +1,53 @@
+﻿@model IEnumerable<_1263087.Models.Employee> 
+
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>Employee Name</th>
+            <th>Contact Address</th>
+            <th>Email</th>
+            <th>DOB</th>
+            <th>Salary</th>
+            <th>Department</th>
+            <th>Status</th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmployeeName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ContactAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmailAddress)
+                </td>
+                
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateOfBirth)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Salary)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Department.DepartmentName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsActive)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.EmployeeID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.EmployeeID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.EmployeeID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

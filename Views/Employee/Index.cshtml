@@ -1,0 +1,18 @@
+﻿@model IEnumerable<_1263087.Models.Employee>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+
+<div id="div-record">
+    @{await Html.RenderPartialAsync("_employeePartialView", Model);}
+</div>
+
+   
